@@ -1,0 +1,5 @@
+{
+  "name": "Umbrella ROS2 Humble",
+  "image": "ghcr.io/sloretz/ros:humble-desktop",
+  "postCreateCommand": "bash -lc 'sudo apt-get update && sudo apt-get install -y python3-colcon-common-extensions ros-humble-nav2-bringup ros-humble-gazebo-ros-pkgs && echo \"source /opt/ros/humble/setup.bash\" >> ~/.bashrc'"
+}
