@@ -9,6 +9,7 @@ This repository combines:
 - `geophone_app.py` - Flask web dashboard for real-time seismic monitoring with WAV recording.
 - `decision_demo/` - Decision-making demo and execution logic.
 - `mission_sim/` - Mission simulation framework with world simulation and hazard adaptation.
+- `swarm_dashboard.py` - Live Flask/Socket.IO dashboard for the two-rover swarm prototype.
 - `ai_models/` - AI model code:
   - `hazard_traversability/` - Model for terrain/hazard assessment.
   - `resource_mission_state/` - Model for mission state estimation.
@@ -32,7 +33,13 @@ If `sounddevice` cannot access hardware, the app falls back to demo mode.
 python geophone_app.py
 ```
 
-Open `http://127.0.0.1:5000` in your browser.
+For the Mars swarm prototype:
+
+```bash
+python swarm_dashboard.py
+```
+
+Open `http://127.0.0.1:5050` in your browser for the swarm dashboard, or `http://127.0.0.1:5000` for the geophone app.
 
 ## Notes
 
@@ -40,3 +47,4 @@ Open `http://127.0.0.1:5000` in your browser.
 - Customize decision logic in `decision_demo/decision_manager.py`.
 - Add or modify missions in `mission_sim/`.
 - Train or improve AI models in `ai_models/`.
+- The two-rover swarm prototype uses delayed peer telemetry and local target negotiation in `mission_sim/two_rover_main.py`.
